@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "/home/ding/.virtualenvs/env1/bin/python3.5"
+    "python.pythonPath": "/home/ding/.virtualenvs/env1/bin/python3.5",
+    "python.linting.pylintPath": "/home/ding/.virtualenvs/env1/bin/pylint"
 }

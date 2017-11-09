@@ -52,7 +52,9 @@
 .cbp_tmtimeline > li .cbp_tmicon { width: 10px; height: 10px; font-family: 'ecoico'; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; font-size: 1.4em; line-height: 40px; -webkit-font-smoothing: antialiased; position: absolute; color: #fff; background: #46a4da; border-radius: 50%; box-shadow: 0 0 0 3px #afdcf8; text-align: center; left: 170px; top: 15px; margin: 0 0 0 -25px; }
 .blogpic { width: 200px; height: 120px; overflow: hidden; display: block; float: left; margin-right: 20px; }
 .blogpic img { width: 100%; height: auto; margin: auto; }
-a.readmore { background: #075498; color: #fff; padding: 5px 10px; float: right; margin: 20px 0 0 0; border-radius: 5px; }
+.cbp_tmlabel div { height: 90px; }
+a.readmore { background: #075498; color: #fff; padding: 5px 10px; float: right; border-radius: 5px; }
+.views { float: right; line-height:30px; margin: 0px 15px; font-size: 5px; color: black; }
 .cbp_tmtimeline li .cbp_tmtime { -webkit-transition: all 1s; -moz-transition: all 1s; -o-transition: all 1s; }
 .cbp_tmtimeline li:hover .cbp_tmicon { box-shadow: 0 0 0 3px #ececec; }
 .cbp_tmtimeline li:hover .cbp_tmtime { background: #afdcf8; border-radius: 20px 0 0 20px; }

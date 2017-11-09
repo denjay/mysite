@@ -11,7 +11,7 @@
                     src="/static/media/{{ topArticle.cover }}"><span>点击查看全文</span></a>
         </ul>
         <p><a href="/articles/detail/{{ topArticle.id }}">{{ topArticle.title | truncatechars:'21' }}</a></p>
-        <figcaption>{{ topArticle.content | truncatechars:'80' }}</figcaption>
+        <figcaption>{{ topArticle.content | striptags | truncatechars:'90' }}</figcaption>
     </figure>
     {% endfor %}
 </div>

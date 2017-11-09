@@ -4,12 +4,9 @@
 <h2 class="ctitle"><b>技术分享</b> <span>不要轻易放弃。学习成长的路上，我们长路漫漫，只因学无止境。</span></h2>
 <div class="rnav">
     <ul>
-        <li><a href="/jstt/bj/">心得笔记</a></li>
-        <li><a href="http://www.ip3q.com/">IP查询</a></li>
-        <li><a href="/jstt/css3/">CSS3|Html5</a></li>
-        <li><a href="/jstt/web/">网站建设</a></li>
-        <li><a href="/news/jsex/">JS经典实例</a></li>
-        <li><a href="/jstt/t/">推荐工具</a></li>
+        {% for tag in tags %}
+        <li><a href="/articles/share/{{ tag.0 }}">{{ tag.1 }}</a></li>
+        {% endfor %}
     </ul>
 </div>
 {% endblock top %}

@@ -17,12 +17,14 @@
                 <div class="cbp_tmicon"></div>
                 <div class="cbp_tmlabel" data-scroll-reveal="enter right over 1s">
                     <h2>{{ article.title }}</h2>
-                    <p>
-                        <span class="blogpic"><a href="/articles/detail/{{ article.id }}"><img
+                    <div>
+                        <span class="blogpic"><a href="/articles/detail/{{ article.id }}" target="_blank"><img
                                 src="/static/media/{{ article.cover }}"></a></span>
-                        {{ article.content | striptags | truncatechars:'100' }}
-                    </p>
+                        <span>{{ article.content | striptags | truncatechars:'120' }}</span>
+                    </div>
                     <a href="/articles/detail/{{ article.id }}" target="_blank" class="readmore">阅读全文&gt;&gt;</a>
+                    <p class="views">点击量：{{ article.click }}</p>
+
                 </div>
             </li>
             {% endfor %}
