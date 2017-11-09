@@ -1,0 +1,7 @@
+{
+    "version": "0.1.0",
+    "command": "/home/ding/.virtualenvs/env1/bin/python",
+    "isShellCommand": true,
+    "args": ["${file}"],
+    "showOutput": "always"
+}
