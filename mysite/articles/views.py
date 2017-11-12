@@ -1,34 +1,76 @@
 from django.shortcuts import render
 from .models import Articles, Classification
+from django.core.paginator import Paginator
+
+ARTICLES_NUM_PER_PAGE = 2
 
 
-def index(request):
+def get_pages_range(page, paginator):
+    pages_num = paginator.num_pages
+    if pages_num / page > 2:
+        left = max(page - 2, 1)
+        right = min(left + 4, pages_num)
+    else:
+        right = min(page + 2, pages_num)
+        left = max(right - 4, 1)
+    return paginator.page_range[left - 1: right]
+
+
+def index(request, page):
+    if page == '':
+        page = 1
+    else:
+        page = int(page)
     top_articles = Articles.objects.order_by('-top')[0:3]
-    articles = Articles.objects.order_by('-date')
-    context = {'title': '首页', 'topArticles': top_articles, 'articles': articles}
+    paginator = Paginator(Articles.objects.order_by('-date'), ARTICLES_NUM_PER_PAGE)
+    page_object = paginator.page(page)
+    pages_range = get_pages_range(page, paginator)
+    context = {'title': '首页', 'topArticles': top_articles, 'page_object': page_object, 'pages_range': pages_range,
+               'path': '/index/'}
     return render(request, 'articles/index.html', context=context)
 
 
-def share(request, tag):
+def share(request, tag, page):
+    if page == '':
+        page = 1
+    else:
+        page = int(page)
+
     tag = int(tag)
     if tag == 1:
-        articles = Articles.objects.filter(classification__parent__name='share').order_by('-date')
-    elif tag >= 4:
-        articles = Articles.objects.filter(classification=tag)
+        paginator = Paginator(Articles.objects.filter(classification__parent__name='share').order_by('-date'),
+                              ARTICLES_NUM_PER_PAGE)
+    else:
+        paginator = Paginator(Articles.objects.filter(classification=tag), ARTICLES_NUM_PER_PAGE)
+    page_object = paginator.page(page)
+    pages_range = get_pages_range(page, paginator)
     tags = Classification.objects.get(pk=1).classification_set.values_list('id', 'name')
-    context = {'title': '分享', 'articles': articles, 'tags': tags}
+    context = {'title': '分享', 'tags': tags, 'page_object': page_object, 'pages_range': pages_range,
+               'path': '/articles/share/' + str(tag) + '/'}
     return render(request, 'articles/share.html', context=context)
 
 
-def note(request):
-    articles = Articles.objects.filter(classification__name='note').order_by('-date')
-    context = {'title': '笔记', 'articles': articles}
+def note(request, page):
+    if page == '':
+        page = 1
+    else:
+        page = int(page)
+    paginator = Paginator(Articles.objects.filter(classification__name='note').order_by('-date'), ARTICLES_NUM_PER_PAGE)
+    page_object = paginator.page(page)
+    pages_range = get_pages_range(page, paginator)
+    context = {'title': '笔记', 'page_object': page_object, 'pages_range': pages_range, 'path': '/articles/note/'}
     return render(request, 'base_timeline.html', context=context)
 
 
-def life(request):
-    articles = Articles.objects.filter(classification__name='life').order_by('-date')
-    context = {'title': '生活', 'articles': articles}
+def life(request, page):
+    if page == '':
+        page = 1
+    else:
+        page = int(page)
+    paginator = Paginator(Articles.objects.filter(classification__name='life').order_by('-date'), ARTICLES_NUM_PER_PAGE)
+    page_object = paginator.page(page)
+    pages_range = get_pages_range(page, paginator)
+    context = {'title': '生活', 'page_object': page_object, 'pages_range': pages_range, 'path': '/articles/life/'}
     return render(request, 'articles/life.html', context=context)
 
 

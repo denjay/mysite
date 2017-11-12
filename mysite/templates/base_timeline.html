@@ -10,7 +10,7 @@
         {% block top %}
         {% endblock top %}
         <ul class="cbp_tmtimeline">
-            {% for article in articles %}
+            {% for article in page_object.object_list %}
             <li>
                 <time class="cbp_tmtime"><span>{{ article.date | date:"m-d" }}</span> <span>{{ article.date | date:"Y" }}</span>
                 </time>
@@ -29,6 +29,33 @@
             </li>
             {% endfor %}
         </ul>
+
+        <div class="page">
+
+            {% if page_object.paginator.num_pages != 1 %}
+                <a title="Total record"><b>{{ page_object.paginator.count }}</b></a>
+                {% if page_object.has_previous %}
+                <a href="{{ path }}"><<</a>
+                <a href="{{ path }}{{ page_object.previous_page_number }}"><</a>
+                {% else %}
+                |
+                {% endif %}
+
+                {% for page_num in pages_range %}
+                    {% if page_num == page_object.number %}
+                    <b>{{ page_num }}</b>
+                    {% else %}
+                    <a href="{{ path }}{{ page_num }}">{{ page_num }}</a>
+                    {% endif %}
+                {% endfor %}
+
+                {% if page_object.has_next %}
+                <a href="{{ path }}{{ page_object.next_page_number }}">></a>
+                <a href="{{ path }}{{ page_object.paginator.num_pages }}">>></a>
+                {% endif %}
+            {% endif %}
+        </div>
+
     </div>
 </article>
 {% endblock articles %}
