@@ -2,6 +2,7 @@
 
 {% block head %}
 <style>
+    body { font-size: 18px }
     .detail { width:90%; margin:0px auto; }
     #title { float:left; }
     .box { overflow:hidden; margin:30px 0; }
@@ -32,7 +33,7 @@
             <a href="/articles/detail/{{ next_article.id }}" class="previous_next">下一篇：{{ next_article.title }}</a>
             {% endif%}
 
-            <h2 class="comments"><b>评论留言：</b></h2>
+            {% comment %} <h2 class="comments"><b>评论留言：</b></h2> {% endcomment %}
         </div>
     </div>
 </article>

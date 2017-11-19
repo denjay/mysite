@@ -59,7 +59,7 @@ def note(request, page):
     page_object = paginator.page(page)
     pages_range = get_pages_range(page, paginator)
     context = {'title': '笔记', 'page_object': page_object, 'pages_range': pages_range, 'path': '/articles/note/'}
-    return render(request, 'base_timeline.html', context=context)
+    return render(request, 'articles/note.html', context=context)
 
 
 def life(request, page):
@@ -100,6 +100,6 @@ def detail(request, article_id):
         next_id = next_list[0] + article_id
         next_article = Articles.objects.get(id=next_id)
 
-    title = article.title + '-丁先杰的个人博客'
+    title = article.title
     context = {'title': title, 'article': article, 'previous_article': previous_article, 'next_article': next_article}
     return render(request, 'articles/detail.html', context)
