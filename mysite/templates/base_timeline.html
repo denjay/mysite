@@ -19,7 +19,7 @@
                     <h2>{{ article.title }}</h2>
                     <div>
                         <span class="blogpic"><a href="/articles/detail/{{ article.id }}" target="_blank"><img
-                                src="/static/media/{{ article.cover }}"></a></span>
+                                src="/media/{{ article.cover }}"></a></span>
                         <span>{{ article.content | striptags | truncatechars:'120' }}</span>
                     </div>
                     <a href="/articles/detail/{{ article.id }}" target="_blank" class="readmore">阅读全文&gt;&gt;</a>

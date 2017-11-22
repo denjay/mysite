@@ -132,7 +132,7 @@ STATIC_ROOT='/var/www/mysite/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-CKEDITOR_UPLOAD_PATH = 'articles_images/'
+CKEDITOR_UPLOAD_PATH = 'article_images/'
 CKEDITOR_IMAGE_BACKEND = 'pillow'
 
 

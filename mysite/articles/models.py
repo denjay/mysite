@@ -18,7 +18,7 @@ class Articles(models.Model):
     click = models.IntegerField(default=0)
     top = models.IntegerField(default=0)
     isDelete = models.BooleanField()
-    cover = models.ImageField(upload_to='articles')
+    cover = models.ImageField(upload_to='article_images', default='/media/article_images/cover_defaule.png')
 
     def __str__(self):
         return self.title
