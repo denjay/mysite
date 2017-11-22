@@ -1,62 +1,65 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
 
 {% block head %}
-    <link href="/static/css/about.css" rel="stylesheet">
-{% endblock head %}
+<link href="/static/css/about.css" rel="stylesheet"> 
+{% endblock head %} 
 
 {% block articles %}
-    <article>
-        <div class="container">
-            <div class="banner">
-                <p data-scroll-reveal="enter top over 2s">这是个拥挤的地方，而我，却很孤单……</p>
-                <p data-scroll-reveal="enter left over 2s after 1s">生命会给每个人配送等量的惊喜，如果属于你的那份暂时还没收到，那一定是上帝他老人家想憋个大的。</p>
-                <p data-scroll-reveal="enter bottom over 2s after 2s">人生就像赶路，累了就休息会儿，养好精神再出发，不是越早到达目的地越好！</p>
-            </div>
-            <div class="memorial_day">
-                <div class="time_axis"></div>
-                <ul>
-                    <li class="n1"><a href="/">开始写此博客</a>
-                        <div class="dateview">2017-11-06</div>
-                    </li>
-                    <li class="n2"><a href="/">基本完成开发</a>
-                        <div class="dateview">2017-11-17</div>
-                    </li>
-                    <li class="n3"><a href="/">正式部署上线</a>
-                        <div class="dateview">2017-11-18</div>
-                    </li>
-                    <li class="n4"><a href="/">分享第一个博客</a>
-                        <div class="dateview">2017-11-19</div>
-                    </li>
-                </ul>
-            </div>
-            <div class="about left">
-                <h2>Just about me</h2>
-                <ul>
-                    <p>
-                        丁先杰，90后男生。2017年初裸辞，半路出家下定决心要从事网站开发工作。毕业这几年都是做电梯机械工程师，工作越久我越害怕自己以后走不掉了，想像自己二十年后仍然在这里做着差不多的事情就感到一阵阵失落。技术的熟练只会让我觉得无趣，因为机械专业并不是我的真爱。
-                    </p>
-                    <p>
-                        一眼能望到头的生活不是我想要的，崎岖的路总是比笔直的路有美感。从小内向胆小的我能做出这个决定应该称得上是“胆大妄为”了，我也是一个比较坚持的人，家人和朋友的劝阻都没能把我从“迷途”中拉回来。我没有选择报培训班，我相信凭借我的自学能力是完全没问题的，因为大学里面学过一些计算机的基础知识，比如C语言、计算机原理等，其实挺有意思的。再者，我在工作的这几年都有接触编程，比如之前使用vb来制作excel，后来用lisp写cad工具，作为一名丹参枸，平时下班后就会自学lisp，因为用lisp编写的工具能极大的提高工作效率，渐渐地我发现编程比当时的工作有趣多了！兴趣才是学习的最大动力。
-                    </p>
-                    <p>
-                        终于，在今年5月我辞了工作，在外面租了个十几平米的小房子，宅在里面“闭关修炼”，我在网上买了一整套python相关的学习教程，把系统换成linux，暂时把方向定为网站后台开发（django），开始沉浸在学习之中。我坚信微信是人类前进道路上的畔脚石，所以我卸载掉了微信，从此在网络上销声匿迹。到现在我已经比较熟练地掌握了python，对linux系统也比较熟悉。数据库方面，对mysql掌握比较好，对redis也有所了解，学习django就不得不学习前端，所以又学习了html、css、jQuery，虽然不是很熟，但是在工作中够用了，以后再考虑做一个全栈工程师。在后期我学习了django，也按照视频教程做了一个简单的电商网站，了解了django开发的完整过程。
-                    </p>
-                    <p>
-                        我以为学完django就可以出山了，燃蛾，还是我太年轻了！在投了半个月简历后，发现都石沉大海，连小浪花都没有激起一片，这时我开始方了，招聘信息上说要工作经验和项目经验不是闹着玩的。好吧，虽然经济和家庭的压力越来越大，但是我不得不暂停简历投递，尽快撘起我自己的博客，这也算是一个很好很完整的项目经验了，而且还能在上面放上“陈情表”，万一哪个好心的HR被感动给我发面试邀请呢，哈哈，其实能拥有自己的博客其实也挺cool的。
-                    </p>
-                    <p>
-                        虽然我现在没有找到工作，但是我坚信我能成为一名真正的程序猿，我向往这个职业。即使成为程序猿的道路很坎坷，但我不会后悔，因为这半年我学到了很多知识，我做了喜欢的事，过的很充实。我仍旧期待着未来，也许不远……
-                    </p>
-                </ul>
-                <h2>About my blog</h2>
-                <p>域 名：www.iceding.com 创建于2017年11月18日 </p>
-                <p>服务器：Bandwogon
-                <p>框 架：Django</p>
-
-
-            </div>
+<article>
+    <div class="container">
+        <div class="banner">
+            <p data-scroll-reveal="enter top over 2s">这是个拥挤的地方，而我，却很孤单……</p>
+            <p data-scroll-reveal="enter left over 2s after 1s">生命会给每个人配送等量的惊喜，如果属于你的那份暂时还没收到，那一定是上帝他老人家想憋个大的。</p>
+            <p data-scroll-reveal="enter bottom over 2s after 2s">人生就像赶路，累了就休息会儿，养好精神再出发，不是越早到达目的地越好！</p>
         </div>
-        </aside>
-    </article>
-{% endblock articles %}
+        <div class="memorial_day">
+            <div class="time_axis"></div>
+            <ul>
+                <li class="n1">
+                    <a href="/">开始写此博客</a>
+                    <div class="dateview">2017-11-06</div>
+                </li>
+                <li class="n2">
+                    <a href="/">基本完成开发</a>
+                    <div class="dateview">2017-11-17</div>
+                </li>
+                <li class="n3">
+                    <a href="/">正式部署上线</a>
+                    <div class="dateview">2017-11-20</div>
+                </li>
+                <li class="n4">
+                    <a href="/">分享第一篇博客</a>
+                    <div class="dateview">2017-11-21</div>
+                </li>
+            </ul>
+        </div>
+        <div class="about left">
+            <h2>Just about me</h2>
+            <ul>
+                <p>
+                    丁先杰，90后男僧。2017年4月裸辞，半路出家下定决心要从事网站开发工作。毕业这几年都是做电梯机械工程师，工作越久我越害怕自己以后走不掉了，想像自己二十年后仍然在这里做着差不多的事情就感到一阵阵失落。技术的熟练只会让我觉得无趣，因为机械专业并不是我的真爱。
+                </p>
+                <p>
+                    一眼能望到头的生活不是我想要的，崎岖的路总是比笔直的路有美感。从小内向胆小的我能做出这个决定应该称得上是“胆大妄为”了，我也是一个比较坚持的人，家人和朋友的劝阻都没能把我从“迷途”中拉回来。我没有选择报培训班，我相信凭借我的自学能力是完全没问题的，因为大学里面学过一些计算机的基础知识，比如C语言、计算机原理等，其实挺有意思的。再者，我在工作的这几年都有接触编程，比如之前使用vb来制作excel，后来用lisp写cad工具，作为一名丹参枸，平时下班后就会自学lisp，因为用lisp编写的工具能极大的提高工作效率，渐渐地我发现编程比当时的工作有趣多了！兴趣才是学习的最大动力。
+                </p>
+                <p>
+                    终于，在今年5月我辞了工作，在外面租了个十几平米的小房子，宅在里面“闭关修炼”，我在网上买了一整套python相关的学习教程，把系统换成linux，暂时把方向定为网站后台开发（django），开始沉浸在学习之中。我坚信微信是人类前进道路上的畔脚石，所以我卸载掉了微信，从此在网络上销声匿迹。到现在我已经比较熟练地掌握了python，对linux系统也比较熟悉。数据库方面，对mysql掌握比较好，对redis也有所了解，学习django就不得不学习前端，所以又学习了html、css、jQuery，虽然不是很熟，但是在工作中够用了，以后再考虑做一个全栈工程师。在后期我学习了django，也按照视频教程做了一个简单的电商网站，了解了django开发的完整过程。
+                </p>
+                <p>
+                    我以为学完django就可以出山了，燃蛾，还是我太年轻了！在投了半个月简历后，发现都石沉大海，连小浪花都没有激起一片，这时我开始方了，招聘信息上说要工作经验和项目经验不是闹着玩的。好吧，虽然经济和家庭的压力越来越大，但是我不得不暂停简历投递，尽快撘起我自己的博客，这也算是一个很好很完整的项目经验了，而且还能在上面放上“陈情表”，万一哪个好心的HR被感动给我发面试邀请呢，哈哈，其实能拥有自己的博客其实也挺cool的。
+                </p>
+                <p>
+                    虽然我现在没有找到工作，但是我坚信我能成为一名真正的程序猿，我向往这个职业。即使成为程序猿的道路很坎坷，但我不会后悔，因为这半年我学到了很多知识，我做了喜欢的事，过的很充实。我仍旧期待着未来，也许不远……
+                </p>
+            </ul>
+            <h2>About my blog</h2>
+            <p>域 名：www.iceding.com 创建于2017年11月20日 </p>
+            <p>主 机：Bandwogon</p>
+            <p>框 架：Django</p>
+            <p>服务器：Nginx</p>
 
+        </div>
+    </div>
+    </aside>
+</article>
+{% endblock articles %}
