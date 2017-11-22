@@ -1,5 +1,5 @@
 from django.db import models
-from tinymce.models import HTMLField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 class Classification(models.Model):
@@ -12,7 +12,7 @@ class Classification(models.Model):
 
 class Articles(models.Model):
     title = models.CharField(max_length=50, null=False)
-    content = HTMLField()
+    content = RichTextUploadingField()
     classification = models.ForeignKey('Classification')
     date = models.DateTimeField(auto_now_add=True)
     click = models.IntegerField(default=0)
