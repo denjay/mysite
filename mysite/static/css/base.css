@@ -22,7 +22,11 @@ nav a { position: relative; display: inline-block; font-size: 18px; margin-right
 .en { color: #fff; font-size: 12px; z-index: 1; display: block; }/* ie */
 article { background: url(../images/articlebg.png) repeat; }
 .container { background: url(../images/articlebg.png) repeat; overflow: hidden; margin: 20px; box-shadow: #0F2E64 0px 1px 10px; }
-footer { text-align: center; padding: 20px 0 }
+footer {  text-align: center; padding: 20px 0 }
+footer ul { padding: 5px 0px 5px 0px; overflow: hidden; display: inline-block; border-bottom: 1px solid rgba(100, 100, 100, 0.7); }
+footer ul li { float: left; padding:0px 10px 0px 10px; border-right: 1px solid rgba(100, 100, 100, 0.7) }
+footer ul li:last-child { border-right: none }
+footer > a { display: block }
 .page{ margin:20px 0 ; text-align:center; width:100%;overflow: hidden;}
 .page a b {color: #aee1ff;}
 .page>b,.page a {margin: 0 2px;height: 26px;line-height: 26px;border-radius: 50%;width: 26px;text-align: center;display: inline-block}
