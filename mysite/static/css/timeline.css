@@ -44,7 +44,7 @@
 .cbp_tmtimeline > li .cbp_tmtime span:first-child { font-size: 14px; color: #bdd0db; }
 .cbp_tmtimeline > li .cbp_tmtime span:last-child { font-size: 22px; color: #3594cb; }
 
-.cbp_tmtimeline > li .cbp_tmlabel { margin: 0 50px 15px 180px; background: #3594cb; color: #fff; padding: 2em; position: relative; border-radius: 5px; height: 150px; }
+.cbp_tmtimeline > li .cbp_tmlabel { margin: 0 50px 15px 180px; background: rgba(34,34,34,0.6); color: #fff; padding: 2em; position: relative; border-radius: 5px; height: 150px; }
 
 .cbp_tmtimeline > li .cbp_tmlabel h2 { margin-top: 0px; padding: 0 0 10px 0; font-size: 16px; text-shadow: rgba(7, 84, 152, 0.71) 1px 1px 1px; }
 .cbp_tmtimeline > li .cbp_tmlabel:after { right: 100%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; border-right-color: #3594cb; border-width: 10px; top: 10px; }
@@ -54,7 +54,7 @@
 .blogpic img { width: 100%; height: auto; margin: auto; }
 .cbp_tmlabel div { height: 90px; }
 a.readmore { background: #075498; color: #fff; padding: 5px 10px; float: right; border-radius: 5px; }
-.views { float: right; line-height:30px; margin: 0px 15px; font-size: 5px; color: black; }
+.views { float: right; line-height:30px; margin: 0px 15px; font-size: 5px; }
 .cbp_tmtimeline li .cbp_tmtime { -webkit-transition: all 1s; -moz-transition: all 1s; -o-transition: all 1s; }
 .cbp_tmtimeline li:hover .cbp_tmicon { box-shadow: 0 0 0 3px #ececec; }
 .cbp_tmtimeline li:hover .cbp_tmtime { background: #afdcf8; border-radius: 20px 0 0 20px; }
