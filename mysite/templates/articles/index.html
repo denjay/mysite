@@ -7,8 +7,7 @@
     {% for topArticle in topArticles %}
     <figure>
         <ul>
-            <a href="/articles/detail/{{ topArticle.id }}"><img
-                    src="/media/{{ topArticle.cover }}"><span>点击查看全文</span></a>
+            <a href="/articles/detail/{{ topArticle.id }}"><img src="/media/{{ topArticle.cover }}"><span>点击查看全文</span></a>
         </ul>
         <p><a href="/articles/detail/{{ topArticle.id }}">{{ topArticle.title | truncatechars:'21' }}</a></p>
         <figcaption>{{ topArticle.content | striptags | truncatechars:'90' }}</figcaption>

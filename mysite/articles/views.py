@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Articles, Classification
 from django.core.paginator import Paginator
 
-ARTICLES_NUM_PER_PAGE = 2
+ARTICLES_NUM_PER_PAGE = 10
 
 
 def get_pages_range(page, paginator):
