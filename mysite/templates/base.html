@@ -13,7 +13,8 @@
     <!--[if lt IE 9]>
     <script src="/static/js/modernizr.js"></script>
     <![endif]-->
-    <script src="/static/js/scrollReveal.js"></script>
+    
+    
 </head>
 <body>
 <header>
@@ -38,8 +39,44 @@
 		<li><a href="http://nginx.org/" target="_blank">Nginx</a></li>
 	</ul>
 	<a href="https://github.com/denjay/" target="_blank">GitHub: denjay</a>
-	
 </footer>
+<b id="gotop">↑</b>
+
+<script>
+        window.onload = function () {
+            var topbtn = document.getElementById("gotop");
+            var timer = null;
+                //获取屏幕的高度
+            var pagelookheight = document.documentElement.clientHeight;
+            
+            window.onscroll = function(){                
+                //滚动超出高度，显示按钮，否则隐藏
+                var backtop = document.documentElement.scrollTop;
+                
+                           //  滚动超过一频    应该显示
+                if(backtop >= pagelookheight){
+                    topbtn.style.display = "block";
+                }
+                      //   不显示
+                else{
+                    topbtn.style.display = "none";
+                }
+            }
+         
+            topbtn.onclick = function () {
+                         timer = setInterval(function () {
+                    var backtop = document.documentElement.scrollTop;  
+                                  //速度操作  减速
+                    var speedtop = backtop/5;  
+                    document.documentElement.scrollTop = backtop -speedtop;  //高度不断减少
+                    if(backtop ==0){  //滑动到顶端
+                        clearInterval(timer);  //清除计时器
+                    }
+                }, 30);
+            }
+        }
+</script>
+
 <script>
 	if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
 		(function(){
