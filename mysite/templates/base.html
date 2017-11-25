@@ -20,11 +20,11 @@
 <header>
     <div class="logo" data-scroll-reveal="enter right over 1s"><a href="/"><img src="/static/images/logo.png"></a></div>
     <nav class="topnav" data-scroll-reveal="enter bottom over 1s after 1s">
-        <a href="/index/"><span>首页</span><span class="en">Home</span></a>
-        <a href="/articles/share/1"><span>分享</span><span class="en">Share</span></a>
-        <a href="/articles/note/"><span>笔记</span><span class="en">Note</span></a>
-        <a href="/articles/life/"><span>生活</span><span class="en">Life</span></a>
-        <a href="/articles/about/"><span>关于我</span><span class="en">About</span></a>
+        <a href="/index/"><span id="首页">首页</span><span class="en">Home</span></a>
+        <a href="/articles/share/1"><span id="分享">分享</span><span class="en">Share</span></a>
+        <a href="/articles/note/"><span id="笔记">笔记</span><span class="en">Note</span></a>
+        <a href="/articles/life/"><span id="生活">生活</span><span class="en">Life</span></a>
+        <a href="/articles/about/"><span id="关于我">关于我</span><span class="en">About</span></a>
         <!--<a href="/articles/gbook"><span>留言</span><span class="en">Saying</span></a>-->
     </nav>
 </header>
@@ -43,38 +43,40 @@
 <b id="gotop">↑</b>
 
 <script>
-        window.onload = function () {
-            var topbtn = document.getElementById("gotop");
-            var timer = null;
-                //获取屏幕的高度
-            var pagelookheight = document.documentElement.clientHeight;
-            
-            window.onscroll = function(){                
-                //滚动超出高度，显示按钮，否则隐藏
-                var backtop = document.documentElement.scrollTop;
-                
-                           //  滚动超过一频    应该显示
-                if(backtop >= pagelookheight){
-                    topbtn.style.display = "block";
-                }
-                      //   不显示
-                else{
-                    topbtn.style.display = "none";
-                }
+    window.onload = function () {
+        var topbtn = document.getElementById("gotop");
+        var timer = null;
+        // 获取屏幕的高度
+        var pagelookheight = document.documentElement.clientHeight;
+        
+        // 滚动超出高度，显示按钮，否则隐藏
+        window.onscroll = function(){                
+            var backtop = document.documentElement.scrollTop;
+            // 滚动超过一频,应该显示
+            if(backtop >= pagelookheight){
+                topbtn.style.display = "block";
             }
-         
-            topbtn.onclick = function () {
-                         timer = setInterval(function () {
-                    var backtop = document.documentElement.scrollTop;  
-                                  //速度操作  减速
-                    var speedtop = backtop/5;  
-                    document.documentElement.scrollTop = backtop -speedtop;  //高度不断减少
-                    if(backtop ==0){  //滑动到顶端
-                        clearInterval(timer);  //清除计时器
-                    }
-                }, 30);
+            else{
+                topbtn.style.display = "none";
             }
         }
+
+        // 点击回到顶部按钮时的动作
+        topbtn.onclick = function () {
+                timer = setInterval(function () {
+                var backtop = document.documentElement.scrollTop;  
+                // 速度操作  减速
+                var speedtop = backtop/5;  
+                document.documentElement.scrollTop = backtop -speedtop;  // 高度不断减少
+                if(backtop ==0){  // 滑动到顶端
+                    clearInterval(timer);  // 清除计时器
+                }
+            }, 30);
+        }
+        
+        // 标示出所在板块
+        document.getElementById("{{ title }}").style.borderBottom="2px solid rgba(200,200,200,0.7)";
+    }
 </script>
 
 <script>
