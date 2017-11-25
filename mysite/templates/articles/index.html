@@ -2,7 +2,13 @@
 
 {% block head %}
 <script>
-    
+    // 使置顶的三幅图可见部分在图片中间
+    window.onload = function () {
+        var imgArray = document.getElementsByTagName("img")
+        for (var i = 1; i < 4; i++){
+            imgArray[i].style.marginLeft = "calc((100% - " + imgArray[i].width + "px) / 2)";        
+        }
+    }
 </script>
 {% endblock head %}
 
