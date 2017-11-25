@@ -1,6 +1,10 @@
 {% extends 'base_timeline.html' %}
 
-<title>首页</title>
+{% block head %}
+<script>
+    
+</script>
+{% endblock head %}
 
 {% block top %}
 <div class="blog" data-scroll-reveal="enter top">
@@ -10,7 +14,7 @@
             <a href="/articles/detail/{{ topArticle.id }}"><img src="/media/{{ topArticle.cover }}"><span>点击查看全文</span></a>
         </ul>
         <p><a href="/articles/detail/{{ topArticle.id }}">{{ topArticle.title | truncatechars:'21' }}</a></p>
-        <figcaption>{{ topArticle.content | striptags | truncatechars:'90' }}</figcaption>
+        <figcaption>{{ topArticle.content | striptags | truncatechars:'68' }}</figcaption>
     </figure>
     {% endfor %}
 </div>

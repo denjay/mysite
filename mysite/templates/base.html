@@ -7,6 +7,8 @@
     <meta name="description" content="丁先杰个人博客，记录生活，分享学习心得！"/>
     <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon" />
     <link href="/static/css/base.css" rel="stylesheet">
+    <link href="/static/css/timeline.css" rel="stylesheet">
+    <script src="/static/js/scrollReveal.js"></script>
     {% block head %}
     {% endblock head %}
 
@@ -43,40 +45,38 @@
 <b id="gotop">↑</b>
 
 <script>
-    window.onload = function () {
-        var topbtn = document.getElementById("gotop");
-        var timer = null;
-        // 获取屏幕的高度
-        var pagelookheight = document.documentElement.clientHeight;
-        
-        // 滚动超出高度，显示按钮，否则隐藏
-        window.onscroll = function(){                
-            var backtop = document.documentElement.scrollTop;
-            // 滚动超过一频,应该显示
-            if(backtop >= pagelookheight){
-                topbtn.style.display = "block";
-            }
-            else{
-                topbtn.style.display = "none";
-            }
+    var topbtn = document.getElementById("gotop");
+    var timer = null;
+    // 获取屏幕的高度
+    var pagelookheight = document.documentElement.clientHeight;
+    
+    // 滚动超出高度，显示按钮，否则隐藏
+    window.onscroll = function(){                
+        var backtop = document.documentElement.scrollTop;
+        // 滚动超过一频,应该显示
+        if(backtop >= pagelookheight){
+            topbtn.style.display = "block";
         }
-
-        // 点击回到顶部按钮时的动作
-        topbtn.onclick = function () {
-                timer = setInterval(function () {
-                var backtop = document.documentElement.scrollTop;  
-                // 速度操作  减速
-                var speedtop = backtop/5;  
-                document.documentElement.scrollTop = backtop -speedtop;  // 高度不断减少
-                if(backtop ==0){  // 滑动到顶端
-                    clearInterval(timer);  // 清除计时器
-                }
-            }, 30);
+        else{
+            topbtn.style.display = "none";
         }
-        
-        // 标示出所在板块
-        document.getElementById("{{ title }}").style.borderBottom="2px solid rgba(200,200,200,0.7)";
     }
+
+    // 点击回到顶部按钮时的动作
+    topbtn.onclick = function () {
+            timer = setInterval(function () {
+            var backtop = document.documentElement.scrollTop;  
+            // 速度操作  减速
+            var speedtop = backtop/5;  
+            document.documentElement.scrollTop = backtop -speedtop;  // 高度不断减少
+            if(backtop ==0){  // 滑动到顶端
+                clearInterval(timer);  // 清除计时器
+            }
+        }, 30);
+    }
+
+    // 标示出所在板块
+    document.getElementById("{{ title }}").style.borderBottom="2px solid rgba(200,200,200,0.7)";
 </script>
 
 <script>

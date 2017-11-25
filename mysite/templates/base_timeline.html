@@ -1,10 +1,5 @@
 {% extends 'base.html' %}
 
-{% block head %}
-<link href="/static/css/timeline.css" rel="stylesheet">
-<script src="/static/js/scrollReveal.js"></script>
-{% endblock head %}
-
 {% block articles %}
 <article>
     <div class="container">
@@ -21,7 +16,7 @@
                     <div>
                         <span class="blogpic"><a href="/articles/detail/{{ article.id }}" target="_blank"><img
                                 src="/media/{{ article.cover }}"></a></span>
-                        <span>{{ article.content | striptags | truncatechars:'120' }}</span>
+                        <span class="content">{{ article.content | striptags | truncatechars:'80' }}</span>
                     </div>
                     <a href="/articles/detail/{{ article.id }}" target="_blank" class="readmore">阅读全文&gt;&gt;</a>
                     <p class="views">点击量：{{ article.click }}</p>
