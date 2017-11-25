@@ -17,9 +17,6 @@ width:250px;
 50% {
 width:500px;
 }
-100% {
-width:840px;
-}
 }
  @-moz-keyframes time_a /* Firefox */ { 0% {
 width:0px;
@@ -66,9 +63,9 @@ width:840px;
 .memorial_day ul li::before { content: ""; width: 14px; height: 14px; border-radius: 50%; position: absolute; background: #0979b1; border: 3px solid #e9f6fb; }
 .memorial_day ul li:hover::before { background: #075498; border: 3px solid #e9f6fb; }
 .memorial_day ul li.n1 { position: absolute; top: 54px; left: 100px }
-.memorial_day ul li.n2 { position: absolute; top: 54px; left: 325px }
-.memorial_day ul li.n3 { position: absolute; top: 54px; left: 550px }
-.memorial_day ul li.n4 { position: absolute; top: 54px; left: 775px }
+.memorial_day ul li.n2 { position: absolute; top: 54px; left: 40% }
+.memorial_day ul li.n3 { position: absolute; top: 54px; left: 60% }
+.memorial_day ul li.n4 { position: absolute; top: 54px; left: 80% }
 
 .about { width: 90%; margin: 30px auto; overflow: hidden; line-height: 22px; }
 .about h2 { font-size: 22px; margin-bottom: 20px; background: #2a7497; padding: 10px 0; width: 200px; text-align: center; border-radius: 0 30px 30px 0; box-shadow: #21566f 1px 1px 1px; border-left: #dae1e4 6px solid; }
