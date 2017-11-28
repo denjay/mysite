@@ -15,8 +15,7 @@
     <!--[if lt IE 9]>
     <script src="/static/js/modernizr.js"></script>
     <![endif]-->
-    
-    
+
 </head>
 <body>
 <header>
@@ -27,7 +26,13 @@
         <a href="/articles/note/"><span id="笔记">笔记</span><span class="en">Note</span></a>
         <a href="/articles/life/"><span id="生活">生活</span><span class="en">Life</span></a>
         <a href="/articles/about/"><span id="关于我">关于我</span><span class="en">About</span></a>
+        {% if request.session.user_name %}
+        <a class="user" href="/user/logout/"><span id="登录/注册">{{ request.session.user_name }}</span><span class="en">Logout</span></a>
+        {% else %}
+        <a class="user" href="/user/login/"><span id="登录/注册">登录/注册</span><span class="en">Login or sigh</span></a>
+        {% endif %}        
         <!--<a href="/articles/gbook"><span>留言</span><span class="en">Saying</span></a>-->
+        
     </nav>
 </header>
 

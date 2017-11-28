@@ -23,5 +23,6 @@ urlpatterns = [
     url(r'^$', include('articles.urls')),
     url(r'^index/', include('articles.urls')),
     url(r'^articles/', include('articles.urls')),
+    url(r'^user/', include('user.urls')),
     url(r'ckeditor/', include('ckeditor_uploader.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

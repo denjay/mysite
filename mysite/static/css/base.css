@@ -20,6 +20,7 @@ nav a { position: relative; display: inline-block; font-size: 18px; margin-right
 .topnav a span:last-child { z-index: 1; display: block; color: #fff; opacity: 0; -webkit-transition: -webkit-transform 0.3s, opacity 0.3s; -moz-transition: -moz-transform 0.3s, opacity 0.3s; transition: transform 0.3s, opacity 0.3s; -webkit-transform: translateY(-100%); -moz-transform: translateY(-100%); transform: translateY(-100%); text-align: center }
 .topnav a:hover span:last-child, .topnav a:focus span:last-child { opacity: 1; -webkit-transform: translateY(0%); -moz-transform: translateY(0%); transform: translateY(0%); }
 .en { color: #fff; font-size: 12px; z-index: 1; display: block; }/* ie */
+.user { float: right; }
 article { background: url(../images/articlebg.png) repeat; }
 .container { background: url(../images/articlebg.png) repeat; overflow: hidden; margin: 20px; box-shadow: #0F2E64 0px 1px 10px; }
 footer {  text-align: center; padding: 20px 0 }

@@ -107,3 +107,4 @@ venv.bak/
 
 mysite/uwsgi.pid
 mysite/uwsgi.log
+mysite/media/article_images/
