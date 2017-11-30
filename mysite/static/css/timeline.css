@@ -1,7 +1,7 @@
 @charset "gb2312";
 /* photowall */
 .photowall { width: 94%; margin:30px auto; overflow: hidden;  }
-.photowall img { display: block; opacity: 0.9; -webkit-transition: opacity 0.35s; transition: opacity 0.35s; width: auto; height:100%; margin:auto;  }
+.photowall img { display: block; opacity: 0.9; -webkit-transition: opacity 0.35s; transition: opacity 0.35s; width: 100%; margin:auto; }
 .wall_a { margin: auto; background: #fafcfa; overflow: hidden }
 .wall_a li { float: left; position: relative; width:25%; height:200px; overflow:hidden }
 .wall_a li p a { color: #686868 }

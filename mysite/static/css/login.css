@@ -8,10 +8,41 @@ html {
 }
 
 body {
+  transition: 1s;
   overflow: hidden;
-  background: url(../images/top_login.jpg) no-repeat center bottom #FFF;
+  background: url(../images/top_login_0.jpg) no-repeat center bottom #FFF;
   background-size: cover;
   font-family: 'Titillium Web', sans-serif;
+}
+
+.shade {
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.message {
+  display: none;
+  cursor: default;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  margin: auto;
+  z-index: 1;
+  width: 250px;
+  height: 120px;
+  text-align: center;
+  line-height: 120px;
+  background-color: rgb(56, 60, 72);
+  border-radius: 3px;
+  color: ivory;
+  letter-spacing:2px;
 }
 
 a {
@@ -86,7 +117,7 @@ label {
   color: rgba(255, 255, 255, 0.5);
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
-  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   pointer-events: none;
   font-size: 22px;
 }
@@ -128,6 +159,15 @@ textarea {
 .field-wrap {
   position: relative;
   margin-bottom: 40px;
+}
+
+.field-wrap p {
+  display: none;
+  position: absolute;
+  left: 190px;
+  top: 30px;
+  font-size:14px;
+  color: magenta;
 }
 
 .button {

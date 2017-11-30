@@ -1,7 +1,7 @@
 import hashlib
 import re
 from django.shortcuts import render, redirect
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
 from .models import UserInfo
 
 
@@ -14,7 +14,11 @@ def login_handle(request):
     email = request.POST.get('email')
     user = UserInfo.objects.filter(email=email).first()
     if user:
-        if request.POST.get('password') == user.password:
+        password = request.POST.get('password')
+        sha1 = hashlib.sha1()
+        sha1.update(password.encode('utf-8'))
+        password_hash = sha1.hexdigest()
+        if password_hash == user.password:
             request.session['user_id'] = user.id
             request.session['user_name'] = user.name
             if request.POST.get('remember') is None:
@@ -36,7 +40,7 @@ def register(request):
     password = request.POST.get('password')
     response = HttpResponseRedirect('/user/login/')
 
-    if 0 < len(name) <= 20 and 5 < len(password) and re.match(r'\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}', email) and not UserInfo.objects.filter(email=email):
+    if 0 < len(name) <= 20 and 5 < len(password) and re.match(r'^\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}$', email) and not UserInfo.objects.filter(email=email):
         sha1 = hashlib.sha1()
         sha1.update(password.encode('utf-8'))
         password_hash = sha1.hexdigest()
@@ -46,3 +50,12 @@ def register(request):
     else:
         response.set_cookie('message', 'register_failed', 30)
     return response
+
+
+def check_email(request):
+    email = request.GET.get('email')
+    if UserInfo.objects.filter(email=email):
+        return JsonResponse({"exist": True})
+    else:
+        return JsonResponse({"exist": False})
+
