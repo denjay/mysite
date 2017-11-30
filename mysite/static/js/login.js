@@ -6,6 +6,15 @@ setInterval(function () {
     $('body').css({'backgroundImage': url});
 },5000);
 
+// 点击背景跳转到首页
+$('body').click(function () {
+    window.location.href = '/';
+});
+// 阻止事件冒泡
+$('.form').click(function (e) {
+    e.stopPropagation();
+});
+
 // 增加label动画
 $('.form').find('input').on('blur focus', function (e) {
     var $this = $(this),
@@ -28,7 +37,8 @@ $('.form').find('input').on('blur focus', function (e) {
 // 点击遮罩时隐藏
 $('.shade, .message').click(function () {
     $('.shade, .message').hide();
-})
+    return false;
+});
 
 // 弹出提示信息
 function showMessage(str){
@@ -37,7 +47,7 @@ function showMessage(str){
     setTimeout(function (){
         $('.shade, .message').hide();
     }, 3000);
-}
+};
 
 // 以下几个验证表单信息
 $("#signup input").eq(1).blur(function () {
@@ -55,7 +65,6 @@ $("#signup input").eq(2).blur(function () {
     if (re.test($(this).val())) {
         $.get('/user/check_email/', {"email": $(this).val()}, function (data){
             if (data.exist) {
-                // console.log($(this));
                 label.text('邮箱已存在，请更换').fadeIn();
             }
             else {

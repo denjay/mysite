@@ -3,16 +3,23 @@
 }
 
 html {
+  overflow: hidden;
   margin: 0px;
   height: 100%;
 }
 
 body {
+  height: 100%;
   transition: 1s;
-  overflow: hidden;
+  margin: 0px;
   background: url(../images/top_login_0.jpg) no-repeat center bottom #FFF;
   background-size: cover;
   font-family: 'Titillium Web', sans-serif;
+}
+
+body:before {
+  content: '';
+  display: table;
 }
 
 .shade {
@@ -113,13 +120,13 @@ label {
   -webkit-transform: translateY(6px);
           transform: translateY(6px);
   left: 13px;
-  top: -5px;
+  top: 0px;
   color: rgba(255, 255, 255, 0.5);
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
   backface-visibility: hidden;
   pointer-events: none;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 label.active {
