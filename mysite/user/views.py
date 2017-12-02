@@ -7,7 +7,7 @@ from .models import UserInfo
 
 def login(request, url):
     # url用于记录登录前的位置
-    url = '/' if url == '' else url
+    url = '/' + url
     response = render(request, "user/login.html")
     response.set_cookie('url', url, path='/')
     return response
