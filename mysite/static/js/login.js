@@ -46,7 +46,7 @@ function showMessage(str){
     $('.shade, .message').show();
     setTimeout(function (){
         $('.shade, .message').hide();
-    }, 3000);
+    }, 2000);
 };
 
 // 以下几个验证表单信息
@@ -89,12 +89,16 @@ $("#signup input").eq(3).blur(function () {
 
 // 提交表单
 $('input[type=button]').click(function (){
-    if ($('.field-wrap p:visible').length == 0 && $("#signup input").slice(1,4).val()) {
-        $(this).parent().submit();
-    }
-    else{
-        showMessage('请填写正确的信息！');
-    }
+    $("#signup input").slice(1,4).blur();
+    setTimeout(function () {
+        if ($('.field-wrap p:visible').length == 0 && $("#signup input").slice(1,4).val()) {
+            console.log($(this));
+            $('input[type=button]').parent().submit();
+        }
+        else{
+            showMessage('请填写正确的信息！');
+        }
+    }, 500);
 });
 
 // 切换显示login和signup表单

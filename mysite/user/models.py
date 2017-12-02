@@ -12,7 +12,7 @@ class UserInfo(models.Model):
         return self.name
 
 class Comment(models.Model):
-    contain = models.CharField(max_length=100)
+    contain = models.CharField(max_length=500)
     article = models.ForeignKey('articles.Articles')
     user = models.ForeignKey("UserInfo")
     date = models.DateField(auto_now_add=True)

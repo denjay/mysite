@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'^life/(\d*)$', views.life),
     url(r'^about/$', views.about),
     url(r'^detail/(\d+)/$', views.detail),
+    url(r'^comment/(\d+)/$', views.comment_handle),
 ]
