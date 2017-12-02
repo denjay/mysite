@@ -4,7 +4,7 @@ setInterval(function () {
     image = image<3 ? image+1 : 0;
     url = 'url(/static/images/top_login_' + image + '.jpg)'
     $('body').css({'backgroundImage': url});
-},5000);
+},8000);
 
 // 点击背景跳转到首页
 $('body').click(function () {

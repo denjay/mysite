@@ -100,7 +100,7 @@
                 {% if request.session.user_name %}
                     <label for="comment">{{ request.session.user_name }}：</label>
                 {% else %}
-                    <label for="comment">游客请先<a id="login" href="/user/login/">登录</a></label>
+                    <label for="comment">游客请先<a id="login" href="/user/login/{{ request.path }}">登录</a></label>
                 {% endif %}
                 <textarea name="comment" id="comment" placeholder="请在此处输入评论！"></textarea>
                 <input type="button" value="提交评论">

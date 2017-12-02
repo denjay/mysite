@@ -5,9 +5,12 @@ from django.http import HttpResponseRedirect, JsonResponse
 from .models import UserInfo
 
 
-def login(request):
-    request.COOKIES['url'] = request.get_full_path()
-    return render(request, "user/login.html")
+def login(request, url):
+    # url用于记录登录前的位置
+    url = '/' if url == '' else url
+    response = render(request, "user/login.html")
+    response.set_cookie('url', url, path='/')
+    return response
 
 
 def login_handle(request):

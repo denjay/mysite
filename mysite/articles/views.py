@@ -104,7 +104,6 @@ def detail(request, article_id):
     if next_list:
         next_id = next_list[0] + article_id
         next_article = Articles.objects.get(id=next_id)
-    print('此处没问题---------', comments.count())
     context = {'title': title, 'article': article, 'previous_article': previous_article, 'next_article': next_article, 'comments': comments}
     return render(request, 'articles/detail.html', context)
 
