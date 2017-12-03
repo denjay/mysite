@@ -10,7 +10,8 @@ hr { height:1px; border:none; border-top:1px dashed #0066CC; }
 #date { float:right; }
 .box p { padding:15px; text-indent:40px; }
 .box p:hover { background-color: rgba(100, 100, 100, 0.3); }
-.previous_next { display: block; margin: 0px 0px 10px 0px; }
+.previous_next { display: inline-block; margin: 0px 0px 5px 0px; padding: 5px; }
+.previous_next:hover { background-color: rgba(150, 150, 150, 0.3); border-bottom: 1px solid blue; padding-bottom: 4px; }
 .comments { font-size: 22px; margin: 40px 0px; background: #2a7497; padding: 10px 0; width: 200px; text-align: center; border-radius: 0 30px 30px 0; box-shadow: #21566f 1px 1px 1px; border-left: #dae1e4 6px solid; }
 form { margin:30px auto; width:calc(100% - 50px); }
 form label { display: block; font-size: 16px; margin: 5px 0px; }

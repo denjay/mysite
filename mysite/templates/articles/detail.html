@@ -75,7 +75,7 @@
             </div>
 
             {% if previous_article %}
-            <a href="/articles/detail/{{ previous_article.id }}" class="previous_next">上一篇：{{ previous_article.title }}</a>
+            <a href="/articles/detail/{{ previous_article.id }}" class="previous_next">上一篇：{{ previous_article.title }}</a><br>
             {% endif%}
             {% if next_article %}
             <a href="/articles/detail/{{ next_article.id }}" class="previous_next">下一篇：{{ next_article.title }}</a>
