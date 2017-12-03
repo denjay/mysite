@@ -95,7 +95,7 @@
             </div>
             {% endif %}
             
-            <form action="/articles/comment/{{ articlel.id }}/" method="post">
+            <form action="">
                 {% csrf_token %}
                 {% if request.session.user_name %}
                     <label for="comment">{{ request.session.user_name }}：</label>
