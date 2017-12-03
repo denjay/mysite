@@ -1,10 +1,11 @@
 @charset "gb2312";
-/* ����css */
+/* 共用css */
 * { margin: 0; padding: 0 }
 body { font: 14px "΢���ź�", Arial, Helvetica, sans-serif; background: url(../images/top.jpg) no-repeat center top #0F2E64; background-size: 100%;; color: #fff }
+html { min-width: 800px; }
 img { border: 0; }
 ul, li { list-style: none; }
-/*Ĭ��������ɫ */
+/* 默认链接颜色 */
 a:link, a:visited, a:active { text-decoration: none; color: #fff }
 a:hover { text-decoration: none; color: #fff; }
 .clear { clear: both; }

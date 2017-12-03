@@ -105,7 +105,9 @@ venv.bak/
 
 
 
-mysite/uwsgi.pid
-mysite/uwsgi.log
+
 mysite/media/article_images/
 mysite/user/migrations/0002_auto_20171201_0759.py
+mysite/uwsgi.pid
+mysite/uwsgi.log
+mysite/uwsgi.ini
