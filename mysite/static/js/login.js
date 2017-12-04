@@ -1,4 +1,3 @@
-// 自动换背景
 // 自动换背景图
 var image_num = 1;
 var url = '/static/images/top_login_' + image_num + '.jpg'
