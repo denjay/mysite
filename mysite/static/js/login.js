@@ -1,10 +1,18 @@
 // 自动换背景
-var image = 0;
+// 自动换背景图
+var image_num = 1;
+var url = '/static/images/top_login_' + image_num + '.jpg'
+var img = new Image(); //新建一个图片
+img.src = url; //加载图片
 setInterval(function () {
-    image = image<3 ? image+1 : 0;
-    url = 'url(/static/images/top_login_' + image + '.jpg)'
-    $('body').css({'backgroundImage': url});
-},8000);
+    if(img.complete){
+        $('body').css({'backgroundImage': 'url(' + url + ')'});
+        image_num = image_num<3 ? image_num+1 : 0;
+        url = '/static/images/top_login_' + image_num + '.jpg'
+        img = new Image();
+        img.src = url;
+    };
+}, 8000);
 
 // 点击背景跳转到首页
 $('body').click(function () {
