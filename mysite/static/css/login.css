@@ -65,8 +65,10 @@ a:hover {
 .form {
   background: rgba(19, 35, 47, 0.5);
   padding: 40px;
-  width: 400px;
-  margin: 100px auto;
+  width: 420px;
+  position: absolute;
+  top: calc(50% - 250px);
+  left: calc(50% - 210px);
   border-radius: 4px;
   box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
 }
